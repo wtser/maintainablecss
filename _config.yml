@@ -1,6 +1,6 @@
 name: MaintainableCSS - an approach to writing modular, scalable and maintainable CSS | By Adam Silver
 markdown: kramdown
-url: https://wtser.github.io/maintainablecss/
+url: http://maintainablecss.wtser.com
 include: ['_pages']
 collections:
   chapters:
