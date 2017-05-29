@@ -2,10 +2,10 @@
 layout: chapters
 id: chapters
 permalink: /chapters/
-title: "Chapters"
+title: "章节"
 ---
 
-# Chapters
+# 章节
 
 <ol>
 	{% for chapter in site.chapters %}
