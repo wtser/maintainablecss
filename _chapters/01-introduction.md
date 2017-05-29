@@ -1,9 +1,9 @@
 ---
 layout: chapter
-title: Introduction
+title: 介绍
 section: Preface
 permalink: /chapters/introduction/
-description: An introduction to MaintainableCSS, an approach to writing modular, scalable and of course maintainable CSS.
+description: MaintainableCSS 的介绍, 实现编写模块化，灵活， 可维护的 CSS。
 ---
 
 MaintainableCSS is an approach to writing modular, scalable and maintainable CSS. Not only does this guide explain *how* to do this, but more importantly it explains *why*.
