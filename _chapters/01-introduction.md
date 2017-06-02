@@ -3,18 +3,18 @@ layout: chapter
 title: 介绍
 section: Preface
 permalink: /chapters/introduction/
-description: MaintainableCSS 的介绍, 实现编写模块化，灵活， 可维护的 CSS。
+description: MaintainableCSS 的介绍, 实现编写模块化，灵活，可维护的 CSS。
 ---
 
-MaintainableCSS 目标是编写模块化，可扩展，可维护的 CSS。这个指南不仅仅解释*如何*去做，更多的是解释*为什么*要这么做。
+MaintainableCSS 目标是编写模块化，可扩展，可维护的 CSS。这个指南不仅仅解释**如何**去做，更多的是解释**为什么**要这么做。
 
 ## 无需下载
 
-这不是一个库或框架。It's a set of principles, guides and conventions to help you write CSS for small or large-scale websites.
+这不是一个库或框架。这是一套规则，指南和约定来帮助你编写小型或大规模网站的 CSS。
 
 ## 可维护是什么意思？
 
-Maintainable CSS can be defined as being able to make styling changes, without worrying about accidentally causing problems elsewhere.
+可维护 CSS 可以定义为无需担心改样式会意外导致问题。
 
 ## 可扩展是什么意思?
 
