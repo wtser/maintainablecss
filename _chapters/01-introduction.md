@@ -3,7 +3,7 @@ layout: chapter
 title: 介绍
 section: Preface
 permalink: /chapters/introduction/
-description: MaintainableCSS 的介绍, 实现编写模块化，灵活，可维护的 CSS。
+description: MaintainableCSS 的介绍, 实现编写模块化，可扩展，可维护的 CSS。
 ---
 
 MaintainableCSS 目标是编写模块化，可扩展，可维护的 CSS。这个指南不仅仅解释**如何**去做，更多的是解释**为什么**要这么做。
