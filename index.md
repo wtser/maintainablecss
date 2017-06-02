@@ -7,7 +7,7 @@ id: home
 	<div class="hero-inner">
 		<img class="hero-logo" src="/assets/img/logo.png" alt="">
 		<h1>MaintainableCSS</h1>
-		<p>编写 CSS 无需再担心 overzealous, pre-existing styles 引起问题。 MaintainableCSS 的目标是编写模块化，灵活，可维护的 CSS。</p>
+		<p>编写 CSS 无需再担心 overzealous, pre-existing styles 引起问题。 MaintainableCSS 的目标是编写模块化，可扩展，可维护的 CSS。</p>
 		<a class="primaryLinkButton" href="/chapters/introduction/">立即阅读 &rarr;</a>
 	</div>
 </div>
