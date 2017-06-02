@@ -28,7 +28,7 @@ If we take one of the units away, the others still work. We don't need the TV to
 
 ## 这适合我吗？
 
-If you've ever experienced pain when writing or maintaining CSS, then you'll find useful information in this book. And if you work in a team, this book can serve as documentation for you and your team.
+如果你曾体验过编写或维护 CSS 的痛苦，那么你会从中找到一些有用的信息。如果你在一个团队中工作，本书可以作为你和你团队的文档。
 
 ## 这学起来难吗？
 
