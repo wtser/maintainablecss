@@ -32,4 +32,4 @@ If you've ever experienced pain when writing or maintaining CSS, then you'll fin
 
 ## 这学起来难吗？
 
-并不会。花费不到 20 分钟时间你就能读完，包括它的依据。实践它甚至花不了1分钟。
+并不会。花费不到 20 分钟时间你就能读完，包括它这么做的依据。实践它甚至花不了1分钟。
