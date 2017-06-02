@@ -14,11 +14,11 @@ MaintainableCSS 目标是编写模块化，可扩展，可维护的 CSS。这个
 
 ## 可维护是什么意思？
 
-可维护 CSS 可以定义为无需担心改样式会意外导致问题。
+可维护可以定义为无需担心改样式会意外导致问题。
 
 ## 可扩展是什么意思?
 
-Scalable CSS means that as CSS increases in size, it's still easy to maintain. If you've ever inherited a large CSS codebase, and been afraid to make changes, you'll sympathise with this.
+可扩展意味着随着样式的增加，它仍然易于维护。如果你曾接手一个大CSS的代码，并且害怕对它做修改，我想你会支持这种做法。
 
 ## 模块化是什么意思?
 
@@ -32,4 +32,4 @@ If you've ever experienced pain when writing or maintaining CSS, then you'll fin
 
 ## 这学起来难吗？
 
-No. You can read this in under 20 minutes which includes the rationale behind the approach. Implementing it takes less than a minute.
+并不会。花费不到 20 分钟时间你就能读完，包括它的依据。实践它甚至花不了1分钟。
