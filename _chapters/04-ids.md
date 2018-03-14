@@ -49,6 +49,6 @@ Whilst using IDs for styling is problematic, we can still use them for other thi
 - in-page anchors to a hash fragment in the URL
 - ARIA attributes to help screen reader users
 
-## Final thought
+## 结语
 
 Use IDs whenever you need to enable particular behaviours for browsers and assistive technology. But avoid using them as hooks for styles.
