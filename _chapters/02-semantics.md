@@ -32,7 +32,7 @@ Phil Karton 说过， *计算机科学中有两件事很难：缓存失效和 **
 
 下面是一些语义化 class 的优势：
 
-## 1. 因为他们是可读的
+## 1. 可读性
 
 下面是一个真实的 HTML 代码片段 使用了原子 class：
 
@@ -46,8 +46,8 @@ Phil Karton 说过， *计算机科学中有两件事很难：缓存失效和 **
 - 阅读单词比阅读缩写更容易.
 - 缩写需要被分解并对应认知，假设是我们知道它们的意思。
 - 阅读一群 class 名称也很困难。所以 CSS 才有语法。
-- We need to wade through many classes to work out what's happening; which classes override which; and which apply at certain break points etc.
-- 这些 class 看起来模棱两可。例如， `black-70`指的是颜色还是背景？如果我们需要用检查工具来区分，那么这样的 class 名称是不可读的。
+- 我们需要检查很多 class 才能知道到底发生了什么；哪个 class 覆盖了哪个；哪些用在了一些断点上（响应式）等等。
+- 这些 class 看起来模棱两可。例如， `black-70` 指的是颜色还是背景？如果我们需要用检查工具来区分，那么这样的 class 名称是不可读的。
 - 内容会被环绕的 HTML 混淆。
 
 下面是同样的代码用了语义化的 class：
