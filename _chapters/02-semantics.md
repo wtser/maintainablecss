@@ -8,29 +8,29 @@ description: Why naming something based on what it is, instead of how it looks o
 
 语义化 HTML 不仅仅和我们使用的元素相关。很明确我们应该使用 `<a>` 表示链接， `<table>` 表示表格数据， `<p>` 来表示段落等等。但是我们给 class 的命名就没有那么明确了。
 
-Phil Karton 说过， *there are only two hard things in Computer Science: cache invalidation and **naming things***. So spending an entire chapter talking about it seems like an appropriate thing to do.
+Phil Karton 说过， *计算机科学中有两件事很难：缓存失效和 **命名***. 所以比较适合单独开一个章节来讲这个。
 
-Naming is quite frankly the most important aspect of writing maintainable CSS. There are two main approaches: the semantic approach and the non-semantic approach. Let's discuss what they are.
+坦率的说，命名是编写可维护 CSS 最重要的部分。 主要有两个方式：语义化方式和非语义化方式。让我们分别讨论一下。
 
 ## 语义化 vs 非语义化
 
-Here are some non-semantic classes:
+这是一些非语义化的 class：
 
 	<div class="red pull-left pb3">
 	<div class="grid row">
 	<div class="col-xs-4">
 
-Non-semantic classes don't convey *what* an element represents. At best, they give us an idea of what an element *looks* like. Atomic, visual, behavioural and utility classes are all forms of non-semantic classes.
+非语义化 class 不表达元素本身代表**什么** ,最多他能让我们知道元素是**什么样子**的。 原子，视觉，行为和实用 class 都是 非语义化 class 的表现形式。
 
-Here are some semantic classes:
+这是一些语义化的 class：
 
 	<div class="basket">
 	<div class="product">
 	<div class="searchResults">
 
-Semantic classes don't convey their styles, but that's okay. That's what CSS is for. Semantic classes mean something to HTML, CSS, Javascript and automated functional tests.
+语义化的 class 不表达它们的样式，不过没关系。那是 CSS 做的事情。语义化 class 对 HTML, CSS, Javascript and 自动化功能测试是有意义的。
 
-There are many reasons why semantic classes are advantageous:
+下面是一些语义化 class 的优势：
 
 ## 1. 因为他们是可读的
 
