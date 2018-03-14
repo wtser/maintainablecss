@@ -1,18 +1,18 @@
 ---
 layout: chapter
-title: Semantics
+title: 语义化
 section: Background
 permalink: /chapters/semantics/
 description: Why naming something based on what it is, instead of how it looks or behaves is the foundation of well architected and maintainable CSS.
 ---
 
-Semantic HTML isn't only about the elements we use. It's quite obvious that we should use `<a>` for links, `<table>` for tabular data and `<p>` for paragraphs etc. What's less obvious is the names we use for classes.
+语义化 HTML 不仅仅和我们使用的元素相关。很明确我们应该使用 `<a>` 表示链接， `<table>` 表示表格数据， `<p>` 来表示段落等等。但是我们给 class 的命名就没有那么明确了。
 
-As Phil Karton says, *there are only two hard things in Computer Science: cache invalidation and **naming things***. So spending an entire chapter talking about it seems like an appropriate thing to do.
+Phil Karton 说过， *there are only two hard things in Computer Science: cache invalidation and **naming things***. So spending an entire chapter talking about it seems like an appropriate thing to do.
 
 Naming is quite frankly the most important aspect of writing maintainable CSS. There are two main approaches: the semantic approach and the non-semantic approach. Let's discuss what they are.
 
-## Semantic vs non-semantic
+## 语义化 vs 非语义化
 
 Here are some non-semantic classes:
 
@@ -32,7 +32,7 @@ Semantic classes don't convey their styles, but that's okay. That's what CSS is 
 
 There are many reasons why semantic classes are advantageous:
 
-## 1. Because they are readable
+## 1. 因为他们是可读的
 
 Here's a real snippet of HTML using atomic classes:
 
@@ -65,7 +65,7 @@ Notes:
 - The HTML is half the size.
 - It's easy to read the CSS (in the inspector or in the file) because it has dedicated language constructs that exist for this purpose.
 
-## 2. Because it's easier to build responsive sites
+## 2. 因为它更容易用来构建响应式网站
 
 Imagine coding a two-column responsive grid whereby:
 
@@ -104,7 +104,7 @@ Notes:
 
 > Question: How valuable is a codified responsive grid system? A [layout should adapt to the content](http://adamsilver.io/articles/stop-using-device-breakpoints/), not the other way around.
 
-## 3. Because they are easier to find
+## 3. 因为它们更容易被找到
 
 Searching for HTML with a non-semantic class yields many results. As semantic classes are unique, a search yields only one result, making it easy to track down the HTML.
 
@@ -118,7 +118,7 @@ In some respects we may as well inline styles. This is more explicit and reduces
 
 > Question: Isn't `.red` the exact same abstraction that CSS already gives us for free with `color: red`?
 
-## 6. Because they provide hooks for automated tests
+## 6. 因为它们为自动化测试提供了钩子
 
 Automated functional tests work by searching for, and interacting with elements. This may include:
 
@@ -130,21 +130,21 @@ Automated functional tests work by searching for, and interacting with elements.
 
 We can't use non-semantic classes to target specific elements. And adding hooks specifically for tests is wasteful as the user has to download this stuff.
 
-## 7. Because they provide hooks for Javascript
+## 7. 因为它们为 Javascript 提供了钩子
 
 We can't use non-semantic classes to target specific elements in order to enhance them with Javascript.
 
-## 8. Because they don't need maintaining
+## 8. 因为它们不需要维护
 
 If we name a thing based on what it is, we won't have to update the HTML again e.g. a heading is always a heading, no matter what it *looks* like.
 
 With visual classes, both the HTML and the CSS need updating (assuming there aren't any selectors available for use).
 
-## 9. Because they are easier to debug
+## 9. 因为它们更容易调试
 
 Inspecting an element with a multitude of atomic classes, means wading through many selectors. With a semantic class, there is only one, making it far easier to work with.
 
-## 10. Because the standards recommend it
+## 10. 因为标准推荐它们
 
 On using the class attribute, HTML5 specs say in 3.2.5.7:
 
