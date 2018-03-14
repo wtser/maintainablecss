@@ -6,7 +6,7 @@ permalink: /chapters/versioning/
 description: Learn how MaintainableCSS makes it really easy to upgrade and AB test modules for rapidly evolving websites.
 ---
 
-We may, for example, want to A/B test two different versions of a module to see which works best. To do this, we need to duplicate the module and give it a unique name. For example, if we want to test two different baskets, the CSS might be as follows:
+我们可能想要对某个模块不同的版本做 A/B 测试，来看哪一个更好。要实现这个，我们需要拷贝该模块并给予一个独一无二的名字。例如，我们想要测试不同的 basket，css 应该像下面这样：
 
 	/* existing module (variant A) */
 	.basket {}
@@ -18,4 +18,4 @@ We may, for example, want to A/B test two different versions of a module to see 
 
 	.basket2-title {}
 
-This way we can maintain two versions during testing until we settle on the best one. And, once we do, it's easy to discard the redundant module as they are not intertwined. Good code is easy to delete.
+这样在测试期间我们能够维护两个版本直到我们选择了最好的那个。这样做，我们能够很容易的移除多余的模块，因为它们没有耦合在一起。好的代码容易删除。
