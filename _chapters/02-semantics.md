@@ -67,13 +67,13 @@ Phil Karton 说过， *计算机科学中有两件事很难：缓存失效和 **
 
 ## 2. 因为它更容易用来构建响应式网站
 
-Imagine coding a two-column responsive grid whereby:
+想象一个两列的响应式栅格：
 
-* each column has `20px` and `50px` padding on small and large screens;
-* each column has `2em` and `3em` font-size on small and large screens; and
-* the columns stack on small screens. Note that *column* is now a misleading class name.
+* 每列有 `20px` and `50px` padding 在小或大屏幕；
+* 每列有 `2em` and `3em` font-size 在小或大屏幕;
+* 列堆叠 在小屏幕. 注意 *column* 是一个误导性的 class 名称。
 
-Here's how this is typically done using visual and utility classes:
+下面是一个典型的使用 视觉和 实用 class 名称的例子：
 
 	<div class="grid clearfix">
 	  <div class="col pd20 pd50 fs2 fs3">Column 1</div>
@@ -82,13 +82,13 @@ Here's how this is typically done using visual and utility classes:
 
 注意：
 
-- There are 7 classes, some of which override each other.
-- To make the columns actually responsive we would need a `fs3large` class etc. This means using a naming convention that recreates language constructs found in CSS.
-- At certain break points, the classes are misleading and redundant. For example `.clearfix` doesn't clear on small screens.
+- 有 7 个 class，一些还会相互覆盖。
+- 为了实现列的响应式，我们需要一个 `fs3large` class 等等。 这就是使用了一个命名约定来再现了 CSS 的语言结构。
+- 在某些断点，这样的 class 名称有点误导和冗余。 例如 `.clearfix` 并不需要在小屏幕下清除。
 
-We've barely evaluated this simple component and yet there is significant pain already.
+我们几乎还没对这个简单的组件进行评估就已经明显的感觉到痛苦了。
 
-Here's the same thing using semantic classes:
+下面的同样的代码但是使用了语义化的 class：
 
 	<div class="thing">
 	  <div class="thing-thingA"></div>
@@ -97,52 +97,52 @@ Here's the same thing using semantic classes:
 
 注意：
 
-- These classes are encapsulated to the module's design and content.
-- It's easy to style elements without having to write a multitude of classes and changing the HTML again.
-- These classes are meaningful in small and big screens.
-- We can use a media query, to clear elements only when needed.
+- 这些 class 封装到模块的设计和内容中。
+- 调整元素的样式很简单，不需要写多个 class，也不需要改变 HTML。
+- 这些 class 在小或大屏幕下都是有意义的。
+- 我们可以使用 media query，只作用于我们需要的元素。
 
-> 问题： How valuable is a codified responsive grid system? A [layout should adapt to the content](http://adamsilver.io/articles/stop-using-device-breakpoints/), not the other way around.
+> 问题： 一个响应式栅格系统有多重要？ [布局应该适应内容](http://adamsilver.io/articles/stop-using-device-breakpoints/), 而不是围绕它的其他东西。
 
 ## 3. 更容易被找到
 
 查找非语义化的 class 字段会出来许多的结果。而语义化的 class 是独一无二的的，一个搜索字段只有一个结果，这使得它在 HTML 中跟更容易被追踪。
 
-## 4. eliminate the risk of regression
+## 4. 降低回归的风险
 
-Updating a visual class could cause regression across a multitude of elements. Updating a semantic class only applies to the module in question, eliminating regression altogether.
+更新一个 视觉 class 会导致跨多元素的回归。更新一个语义化 class 只应用于某个模块，彻底消除了回归。
 
 ## 5. 视觉 class 不值得
 
-In some respects we may as well inline styles. This is more explicit and reduces the CSS footprint to zero. Inline CSS is a problem though, because we can't use media queries for example. And placing CSS in HTML mixes concerns and removes the ability to cache it.
+在某些方面，我们还会使用内联样式。 这更加明确，并消除了 CSS 的痕迹。 内联CSS是有问题的, 例如那样我们无法使用媒体查询。 把 CSS 写在 HTML 显得混乱，并且使得 CSS 没法被缓存。
 
-> 问题: Isn't `.red` the exact same abstraction that CSS already gives us for free with `color: red`?
+> 问题:  `.red` 是否和 CSS 中的 `color: red` 是一样的抽象概念?
 
 ## 6. 为自动化测试提供了钩子
 
-Automated functional tests work by searching for, and interacting with elements. This may include:
+自动化功能测试通过查找元素，与元素交互来工作。包括以下内容：
 
-1. clicking a link
-2. finding a text box
-3. typing in text
-4. submitting a form
-5. verifying some criteria
+1. 点击一个链接
+2. 查找一个文本框
+3. 输入文字
+4. 提交表单
+5. 一些标准条件的验证
 
-We can't use non-semantic classes to target specific elements. And adding hooks specifically for tests is wasteful as the user has to download this stuff.
+我们无法使用非语义化的 class 来表示特殊的目标元素。为了测试而添加特殊的钩子显然是一种浪费，用户必须先下载这些东西。
 
 ## 7. 为 Javascript 提供了钩子
 
-We can't use non-semantic classes to target specific elements in order to enhance them with Javascript.
+无法使用非语义化的 class 来区分特殊目标元素，使其能通过 Javascript 得到增强。
 
 ## 8. 不需要维护
 
-If we name a thing based on what it is, we won't have to update the HTML again e.g. a heading is always a heading, no matter what it *looks* like.
+如果我们基于是什么来命名，那么我们就不需要再次更新 HTML。例如 一个标题永远是标题，不管它看起来怎么样。
 
-With visual classes, both the HTML and the CSS need updating (assuming there aren't any selectors available for use).
+而使用了 视觉 class，HTML 和 CSS 都需要更新 （假设没有可用的选择器）。
 
 ## 9. 更容易调试
 
-Inspecting an element with a multitude of atomic classes, means wading through many selectors. With a semantic class, there is only one, making it far easier to work with.
+审查一个带有多个原子 class 的元素，意味着需要检查许多的选择器。而语义化的 class ，只需要一个，用起来很方便。
 
 ## 10. 标准推荐
 
@@ -160,7 +160,7 @@ hover 状态下改变 padding 和颜色是一个困难的任务。最好避免�
 
 ## 12. Because they produce a small HTML footprint
 
-As we've seen above, atomic classes bloat HTML. Semantic classes result in smaller HTML. And whilst the CSS may increase in size, it's cacheable.
+正如我们所看到的，原子使得 HTML 膨胀臃肿。语义化的 class 产生更小的 HTML。虽然 CSS 大小可能会增加，但它是可缓存的。
 
 ## 结语
 
