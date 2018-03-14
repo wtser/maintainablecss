@@ -1,6 +1,6 @@
 ---
 layout: chapter
-title: Modifiers
+title: 修饰器
 section: Core
 permalink: /chapters/modifiers/
 description: Use modifiers to change appearance based on slight differences.
@@ -54,6 +54,6 @@ We can use the same approach for buttons. Most sites have a primary and secondar
 
 Again, this only works because the differences are well contained and well understood.
 
-## Final thought
+## 结语
 
 Modifiers are a good way to reuse styles across a well understood element. But, the modifier itself should be a tweak. If it contains a lot of overrides, then modifiers are not the way to go. Instead use a [module](/chapters/modules/).
