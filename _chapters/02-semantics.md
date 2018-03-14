@@ -28,7 +28,7 @@ Phil Karton 说过， *计算机科学中有两件事很难：缓存失效和 **
 	<div class="product">
 	<div class="searchResults">
 
-语义化的 class 不表达它们的样式，不过没关系。那是 CSS 做的事情。语义化 class 对 HTML, CSS, Javascript and 自动化功能测试是有意义的。
+语义化的 class 不表达它们的样式，不过没关系。那是 CSS 做的事情。语义化 class 对 HTML, CSS, Javascript 和 自动化功能测试是有意义的。
 
 下面是一些语义化 class 的优势：
 
@@ -59,11 +59,11 @@ Phil Karton 说过， *计算机科学中有两件事很难：缓存失效和 **
 
 注意：
 
-- These classes are easy to read. No mental mapping is required.
-- The content is no longer obfuscated.
-- We know where the module begins and ends.
-- The HTML is half the size.
-- It's easy to read the CSS (in the inspector or in the file) because it has dedicated language constructs that exist for this purpose.
+- 这些 class 很人容易阅读。没有 mental mapping 的必要。
+- 内容不再混淆。
+- 我们知道模块从哪开始与结束。
+- HTML 少了一半。
+- 容易阅读 CSS （用审查工具或在文件中），因为它有一个为此存在的专门语言结构。
 
 ## 2. 因为它更容易用来构建响应式网站
 
@@ -80,7 +80,7 @@ Here's how this is typically done using visual and utility classes:
 	  <div class="col pd20 pd50 fs2 fs3">Column 2</div>
 	</div>
 
-Notes:
+注意：
 
 - There are 7 classes, some of which override each other.
 - To make the columns actually responsive we would need a `fs3large` class etc. This means using a naming convention that recreates language constructs found in CSS.
@@ -95,28 +95,28 @@ Here's the same thing using semantic classes:
 	  <div class="thing-thingB"></div>
 	</div>
 
-Notes:
+注意：
 
 - These classes are encapsulated to the module's design and content.
 - It's easy to style elements without having to write a multitude of classes and changing the HTML again.
 - These classes are meaningful in small and big screens.
 - We can use a media query, to clear elements only when needed.
 
-> Question: How valuable is a codified responsive grid system? A [layout should adapt to the content](http://adamsilver.io/articles/stop-using-device-breakpoints/), not the other way around.
+> 问题： How valuable is a codified responsive grid system? A [layout should adapt to the content](http://adamsilver.io/articles/stop-using-device-breakpoints/), not the other way around.
 
 ## 3. 更容易被找到
 
-Searching for HTML with a non-semantic class yields many results. As semantic classes are unique, a search yields only one result, making it easy to track down the HTML.
+查找非语义化的 class 字段会出来许多的结果。而语义化的 class 是独一无二的的，一个搜索字段只有一个结果，这使得它在 HTML 中跟更容易被追踪。
 
-## 4. Because they eliminate the risk of regression
+## 4. eliminate the risk of regression
 
 Updating a visual class could cause regression across a multitude of elements. Updating a semantic class only applies to the module in question, eliminating regression altogether.
 
-## 5. Because visual classes aren't worth it
+## 5. 视觉 class 不值得
 
 In some respects we may as well inline styles. This is more explicit and reduces the CSS footprint to zero. Inline CSS is a problem though, because we can't use media queries for example. And placing CSS in HTML mixes concerns and removes the ability to cache it.
 
-> Question: Isn't `.red` the exact same abstraction that CSS already gives us for free with `color: red`?
+> 问题: Isn't `.red` the exact same abstraction that CSS already gives us for free with `color: red`?
 
 ## 6. 为自动化测试提供了钩子
 
