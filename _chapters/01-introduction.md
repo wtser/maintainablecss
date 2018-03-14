@@ -22,9 +22,9 @@ MaintainableCSS 目标是编写模块化，可扩展，可维护的 CSS。这个
 
 ## 模块化是什么意思?
 
-A module is a distinct, independent unit that can be combined with other modules to form a more complex structure. In a living room, we can consider the TV, the sofa and the wall art to be modules, all coming together to create a room.
+模块是一个不同的，独立的单元，能与其他模块结合来形成一个更复杂的结构。在客厅，我们可以把电视，沙发和壁画看做模块，这些模块结合在一起构成了一个房间。
 
-If we take one of the units away, the others still work. We don't need the TV to be able to sit on the sofa etc. In a website the header, registration form, shopping basket, article, product list, navigation and homepage promo can all be considered to be modules.
+如果我们拿走某个单元，其他单元依然能工作。没有电视我们还是可以坐在沙发上等等。一个网站，头部，注册表单，购物车，文章，产品列表，导航和首页的广告都可以认为是一个模块。
 
 ## 这适合我吗？
 
