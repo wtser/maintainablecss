@@ -1,6 +1,6 @@
 ---
 layout: chapter
-title: Reuse
+title: 复用
 section: Background
 permalink: /chapters/reuse/
 description: Learn why avoiding reuse and embracing repetition makes CSS maintenance easier.
@@ -12,7 +12,7 @@ This forced abstraction, over-thought and over-engineered code often results in 
 
 Whilst we often try to abstract CSS too much too soon, there are obviously going to be times when reuse makes sense. The question must be answered, *how can we reuse a style?*
 
-## How can we reuse a style?
+## 我们该如何复用一个样式？
 
 If we want to reuse a style, one option would be to comma-delimit selectors inside a well-named file, which if you're into SASS is exactly what `@extends` does. For example, if multiple elements need red text, we could do this:
 
@@ -27,7 +27,7 @@ If a selector deviates from the rules inside the abstraction, it should be remov
 
 It's important to note that this is one of several techniques at our disposal. When a *thing* is well understood we can make use of other techniques, which we'll discuss in [Modules](/chapters/modules/), [State](/chapters/state/) and [Modifiers](/chapters/modifiers/).
 
-## What about mixins?
+## mixins 怎么样？
 
 Mixins provide the best of both worlds. At least in theory.
 
@@ -43,7 +43,7 @@ With all that said, mixins can be very useful. We might, for example, want to ap
 
 As such, mixins are not *bad*, we should use them, but use them judiciously.
 
-## What about performance?
+## 性能怎么样？
 
 We overcomplicate matters when it comes to performance. We get obsessed with the smallest details.
 
@@ -51,10 +51,10 @@ Even if CSS totals more than 100kb, in the grand schemes of things, there's prob
 
 The compression of a single image gives us a better return on our investment. And as we've discussed, resolving other forms of redundancy improves maintainability *and* performance.
 
-## Is this violating DRY principles?
+## 这是否违反了 DRY 原则？
 
 Attempting to reuse, for example `float: left`, is akin to trying to reuse variable names in different Javascript objects. It's simply not in violation of DRY.
 
-## Final thought
+## 结语
 
 Striving for DRY leads to over-thought and over-engineered code. In doing so we make maintenance harder, not easier. Instead of obsessing over styles, we should focus on reusing tangible modules. Something we'll discuss in upcoming chapters.
