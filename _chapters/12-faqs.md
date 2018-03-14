@@ -1,6 +1,6 @@
 ---
 layout: chapter
-title: FAQs
+title: 问与答
 section: Extras
 permalink: /chapters/faqs/
 description: Your questions about MaintainableCSS are answered here.
