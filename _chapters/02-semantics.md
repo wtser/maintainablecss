@@ -150,7 +150,7 @@ On using the class attribute, HTML5 specs say in 3.2.5.7:
 
 > "[...] authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content."
 
-## 11. Because styling state is easier
+## 11. 表达状态样式更简单Because styling state is easier
 
 Consider the following HTML:
 
