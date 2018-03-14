@@ -1,12 +1,12 @@
 ---
 layout: chapter
-title: Modules
+title: 模块
 section: Core
 permalink: /chapters/modules/
 description: Learn the differences between modules and components and how to identify them within a design. We'll also code up some example modules together.
 ---
 
-## What's a module?
+## 什么是模块？
 
 A module is a distinct, independent unit, that can be combined with other modules to form a more complex structure.
 
@@ -16,7 +16,7 @@ If we take one of the units away, the others still work. We don't need the TV to
 
 In a website the header, registration form, shopping basket, article, product list, navigation and homepage promo can all be considered to be modules.
 
-## What's a component?
+## 什么是组件？
 
 A module is made up of components. Without the components, the module is incomplete or broken.
 
@@ -24,7 +24,7 @@ For example a sofa is made up of the frame, upholstery, legs, cushions and back 
 
 A logo *module* might consist of copy, an image and a link, each of which are components. Without the image the logo is broken, without the link the logo is incomplete.
 
-## Modules vs components
+## 模块 vs 组件
 
 Sometimes it's hard to decide whether something should be a component or a module. For example, we might have a header containing a logo and a menu. Are these components or modules?
 
@@ -34,7 +34,7 @@ Nobody understands your requirements as well as you do. Through experience you'l
 
 That's enough theory. Let's build three different modules together. In doing so, the hope is to cover most of the things we think about when writing CSS.
 
-## 1. Creating a basket module
+## 1. 创建一个 basket 模块
 
 We'll simplify this basket for brevity. Each product within the basket will display the product's title with the ability to remove it from the basket.
 
@@ -58,7 +58,7 @@ And the CSS would be:
 	.basket-productTitle {}
 	.basket-removeButton {}
 
-## 2. Creating an order summary module
+## 2. 创建一个 order summary 模块
 
 Next, we will build an order summary module. This module is shown during checkout and bears some resemblance to the basket. For example, it has a title and it displays a list of products.
 
@@ -86,7 +86,7 @@ As counterintuitive as this may seem, duplication is a better prospect. And, thi
 
 Keeping things separate, keeps things simple. Simple is the most important aspect of building reliable, scalable and maintainable software.
 
-## 3. Creating a button module
+## 3. 创建一个按钮模块
 
 As our basket module only appears in the basket page, we didn't consider being able to reuse it elsewhere. Also, we didn't address the fact that the remove button is a component of the basket, making it harder to reuse across modules.
 
@@ -147,7 +147,7 @@ In doing this, we abstracted and applied the styles to a well understood `.check
 
 We haven't discussed having more than one type of button (primary and secondary etc) yet. To do this we can use modifiers, which is addressed later.
 
-## Final thought
+## 结语
 
 A module, by definition, is a reusable chunk of HTML and CSS. Before a group of elements can be upgraded into a module, we must first understand what it is and what its different use cases are.
 
