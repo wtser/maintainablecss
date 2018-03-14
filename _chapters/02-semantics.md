@@ -162,6 +162,6 @@ Changing the padding and colour on hover is a difficult task. It's better to avo
 
 As we've seen above, atomic classes bloat HTML. Semantic classes result in smaller HTML. And whilst the CSS may increase in size, it's cacheable.
 
-## Final thought
+## 结语
 
 Semantic classes are a corner stone of *MaintainableCSS*. Without them, everything else makes little sense. So name something based on what it is and everything else falls into place.
