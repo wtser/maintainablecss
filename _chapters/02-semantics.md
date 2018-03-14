@@ -3,7 +3,7 @@ layout: chapter
 title: 语义化
 section: Background
 permalink: /chapters/semantics/
-description: Why naming something based on what it is, instead of how it looks or behaves is the foundation of well architected and maintainable CSS.
+description: 为何给一些东西命名要基于它们是什么，而不是基于它的外观或者行为是良好架构和可维护的CSS的基础.
 ---
 
 语义化 HTML 不仅仅和我们使用的元素相关。很明确我们应该使用 `<a>` 表示链接， `<table>` 表示表格数据， `<p>` 来表示段落等等。但是我们给 class 的命名就没有那么明确了。
@@ -34,30 +34,30 @@ Phil Karton 说过， *计算机科学中有两件事很难：缓存失效和 **
 
 ## 1. 因为他们是可读的
 
-Here's a real snippet of HTML using atomic classes:
+下面是一个真实的 HTML 代码片段 使用了原子 class：
 
 	<div class="pb3 pb4-ns pt4 pt5-ns mt4 black-70 fl-l w-50-l">
 	  <h1 class="f4 fw6 f1-ns lh-title measure mt0">Heading</h1>
 	  <p class="f5 f4-ns fw4 b measure dib-m lh-copy">Tagline</p>
 	</div>
 
-Notes:
+注意：
 
-- Reading words is much easier than reading abbreviations.
-- Abbreviations have to be broken down and mapped cognitively, assuming we know what they mean in the first place.
-- It's also very hard to read the large cluster of class names. That's why CSS has syntax.
+- 阅读单词比阅读缩写更容易.
+- 缩写需要被分解并对应认知，假设是我们知道它们的意思。
+- 阅读一群 class 名称也很困难。所以 CSS 才有语法。
 - We need to wade through many classes to work out what's happening; which classes override which; and which apply at certain break points etc.
-- These classes are ambiguous. For example, does `black-70` refer to the colour or the background? If we need the inspector to find out, this implies the class names are not readable.
-- The content is obfuscated by the surrounding HTML.
+- 这些 class 看起来模棱两可。例如， `black-70`指的是颜色还是背景？如果我们需要用检查工具来区分，那么这样的 class 名称是不可读的。
+- 内容会被环绕的 HTML 混淆。
 
-Here's the same thing using semantic classes:
+下面是同样的代码用了语义化的 class：
 
 	<div class="hero">
 	  <h1 class="hero-title">Heading</h1>
 	  <p class="hero-tagline">Tagline</p>
 	</div>
 
-Notes:
+注意：
 
 - These classes are easy to read. No mental mapping is required.
 - The content is no longer obfuscated.
@@ -104,7 +104,7 @@ Notes:
 
 > Question: How valuable is a codified responsive grid system? A [layout should adapt to the content](http://adamsilver.io/articles/stop-using-device-breakpoints/), not the other way around.
 
-## 3. 因为它们更容易被找到
+## 3. 更容易被找到
 
 Searching for HTML with a non-semantic class yields many results. As semantic classes are unique, a search yields only one result, making it easy to track down the HTML.
 
@@ -118,7 +118,7 @@ In some respects we may as well inline styles. This is more explicit and reduces
 
 > Question: Isn't `.red` the exact same abstraction that CSS already gives us for free with `color: red`?
 
-## 6. 因为它们为自动化测试提供了钩子
+## 6. 为自动化测试提供了钩子
 
 Automated functional tests work by searching for, and interacting with elements. This may include:
 
@@ -130,33 +130,33 @@ Automated functional tests work by searching for, and interacting with elements.
 
 We can't use non-semantic classes to target specific elements. And adding hooks specifically for tests is wasteful as the user has to download this stuff.
 
-## 7. 因为它们为 Javascript 提供了钩子
+## 7. 为 Javascript 提供了钩子
 
 We can't use non-semantic classes to target specific elements in order to enhance them with Javascript.
 
-## 8. 因为它们不需要维护
+## 8. 不需要维护
 
 If we name a thing based on what it is, we won't have to update the HTML again e.g. a heading is always a heading, no matter what it *looks* like.
 
 With visual classes, both the HTML and the CSS need updating (assuming there aren't any selectors available for use).
 
-## 9. 因为它们更容易调试
+## 9. 更容易调试
 
 Inspecting an element with a multitude of atomic classes, means wading through many selectors. With a semantic class, there is only one, making it far easier to work with.
 
-## 10. 标准推荐它们
+## 10. 标准推荐
 
-On using the class attribute, HTML5 specs say in 3.2.5.7:
+对使用 class 属性 ，HTML5 规范 在 3.2.5.7 这样表述：
 
 > "[...] authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content."
 
 ## 11. 表达状态化样式更简单
 
-Consider the following HTML:
+思考下面的 HTML：
 
 	<a class="padding-left-20 red" href="#"></a>
 
-Changing the padding and colour on hover is a difficult task. It's better to avoid having to fix self-induced problems like this.
+hover 状态下改变 padding 和颜色是一个困难的任务。最好避免类似这样由内部引发的问题。
 
 ## 12. Because they produce a small HTML footprint
 
@@ -164,4 +164,4 @@ As we've seen above, atomic classes bloat HTML. Semantic classes result in small
 
 ## 结语
 
-Semantic classes are a corner stone of *MaintainableCSS*. Without them, everything else makes little sense. So name something based on what it is and everything else falls into place.
+语义化 class 是 *MaintainableCSS* 的垫脚石。没有它，其他部分带来的意义也不大。 所以根据它是什么来命名，然后其他都会水到渠成。
