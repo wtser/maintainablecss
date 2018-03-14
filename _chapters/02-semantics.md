@@ -144,13 +144,13 @@ With visual classes, both the HTML and the CSS need updating (assuming there are
 
 Inspecting an element with a multitude of atomic classes, means wading through many selectors. With a semantic class, there is only one, making it far easier to work with.
 
-## 10. 因为标准推荐它们
+## 10. 标准推荐它们
 
 On using the class attribute, HTML5 specs say in 3.2.5.7:
 
 > "[...] authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content."
 
-## 11. 表达状态样式更简单Because styling state is easier
+## 11. 表达状态化样式更简单
 
 Consider the following HTML:
 
