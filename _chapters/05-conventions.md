@@ -1,6 +1,6 @@
 ---
 layout: chapter
-title: Conventions
+title: 约定
 section: Core
 permalink: /chapters/conventions/
 description: Learn the simple conventions that MaintainableCSS employs to write modules, components and state.
@@ -27,11 +27,11 @@ Notes:
 - names are written with lowerCamelCase
 - selectors are prefixed with the module name
 
-## Must I give a class name to every element?
+## 必须给每个元素一个 class 名称吗？
 
 No. You can write `.searchResults p` if you want to. And sometimes you may have to, if for example you're using markdown. But beware that if you nest a module which contains a `p` it will inherit the styles and need overriding.
 
-## Why must I prefix the module name?
+## 为为什么必须给模块名称加前缀？
 
 Good question. Here's some HTML without a prefix:
 
