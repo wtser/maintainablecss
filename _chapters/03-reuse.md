@@ -3,58 +3,58 @@ layout: chapter
 title: 复用
 section: Background
 permalink: /chapters/reuse/
-description: Learn why avoiding reuse and embracing repetition makes CSS maintenance easier.
+description: 学习为何 避免复用和拥抱重复，使CSS维护更轻松
 ---
 
-As Harry Roberts says, *DRY is often misinterpreted as the necessity to never repeat the exact same thing twice. This is impractical and usually counterproductive, and can lead to forced abstractions, over-thought and over-engineered code.*
+正如 Harry Roberts 所说， *DRY 经常被误解为永远不要重复同样的事情两次。 这是不切实际的，通常会适得其反，并可能导致代码的强制抽象、过度思考和过度设计。*
 
-This forced abstraction, over-thought and over-engineered code often results in visual and atomic classes. We know how painful they are because we discussed them thoroughly in [semantics](/chapters/semantics/). Mixins may also be a problem as we'll discuss shortly.
+这种强制抽象，过度思考，过度设计的代码在视觉和原子 class 中经常出现。我们知道这有多痛苦，我们之前在[语义化](/chapters/semantics/)章节讨论过。混合（Mixins）同样也会成为问题。
 
-Whilst we often try to abstract CSS too much too soon, there are obviously going to be times when reuse makes sense. The question must be answered, *how can we reuse a style?*
+我们经常尝试对 CSS 进行过多过快的抽象， 当我们尝试复用的时候，肯定是需要进行几次抽象的。问题来了, *我们如何复用样式？*
 
 ## 我们该如何复用一个样式？
 
-If we want to reuse a style, one option would be to comma-delimit selectors inside a well-named file, which if you're into SASS is exactly what `@extends` does. For example, if multiple elements need red text, we could do this:
+如果我们想复用一个样式，一个选择是用逗号分隔多个选择器， 在 SASS 中可以使用 `@extends` 实现。 例如多个元素的文字要是红色，我们可以这样做：
 
 	.someThing,
 	.anotherThing {
 	  color: red;
 	}
 
-This approach should be used for convenience, not for performance. (If the abstraction only has one rule, we're simply exchanging one line of code for another.)
+这种方法主要是用起来方便，而不是为了性能。(如果抽象只有一个规则，它也是简单的把这一行代码交给了另一个选择器。)
 
-If a selector deviates from the rules inside the abstraction, it should be removed from the list. Otherwise we could regress the other selectors and potentially experience override issues.
+如果选择器偏离了抽象中的规则，那么它应该从列表中删除。否则，可能会回归影响其他选择器，甚至可能出现样式覆盖问题。
 
-It's important to note that this is one of several techniques at our disposal. When a *thing* is well understood we can make use of other techniques, which we'll discuss in [Modules](/chapters/modules/), [State](/chapters/state/) and [Modifiers](/chapters/modifiers/).
+值得注意的是，这是我们可以使用的几种技术之一。当一个*事物* 被很好的理解我们也可以使用其他技术，我们将会在[模块](/chapters/modules/), [状态](/chapters/state/) and [修饰器](/chapters/modifiers/)中讨论。
 
-## mixins 怎么样？
+## 混合 （mixins） 怎么样？
 
-Mixins provide the best of both worlds. At least in theory.
+Mixins 是个好东西，至少在理论上它是。
 
-Like utility classes, updating a mixin propagates to all instances. If we don't have a handle of what's using the mixin, we increase the risk of regression. Instead of updating a mixin, we can create another, but this causes redundancy.
+像 实用 class，更新一个 mixin 会广播作用到所有的实例。如果没有一个控制器来管理使用的 mixin, 我们就增加了回归的风险。如果不这么做，我们可以创建另一个 class，不过这样就导致了冗余。
 
-Also, mixins easily end up with many rules, multiple parameters, and conditionality. This is complicated. Complicated is hard to maintain.
+同样，mixins 在多个规则，多个参数和条件下，很容易得到很多结果。这很复杂。复杂就很难维护。
 
-To mitigate this complexity, we can create granular mixins, such as one for red text. At first this seems better. But isn't the declaration of a red mixin, the same as the rule itself i.e. `color: red`?
+为了降低复杂度，我们可以创建细粒度的 mixins, 例如表示红色文本。咋一看这挺好。但是这个红色 mixin 的声明，不是和规则本身，例如`color: red`一样吗？
 
-If we need to update the rule in multiple places, a search and replace might be all that's necessary. Also, when the red *mixin* changes to *orange*, its name will need updating anyway.
+如果我们要更新多个地方的规则，搜索和替换应该足够了。同样的，当 mixin *红色* 变为 *黄色*, 无论如何，它的名字也需要更新。
 
-With all that said, mixins can be very useful. We might, for example, want to apply *clearfix* rules across different elements and only within certain breakpoints. This is something that vanilla CSS can't do.
+说了那么多，mixins 还是很有用的。我们可能，例如想要应用 *clearfix* 规则跨越不同的元素 和某些断点。这是原生 CSS 做不到的。
 
-As such, mixins are not *bad*, we should use them, but use them judiciously.
+总之， mixins 不 *坏*，我们应该 明智而审慎地 使用它。
 
 ## 性能怎么样？
 
-We overcomplicate matters when it comes to performance. We get obsessed with the smallest details.
+当涉及到性能时，我们会把事情复杂化。 我们沉迷于最小的细节。
 
-Even if CSS totals more than 100kb, in the grand schemes of things, there's probably very little gain from mindlessly striving for DRYness. And as we've discussed making CSS small makes HTML big.
+即便是 CSS 总大小超过了 100kb，在整个项目中，为了 DRYness 付出大量的精力但是收效甚微。正如我们所讨论的，使 CSS 小了但是 HTML 更大了。
 
-The compression of a single image gives us a better return on our investment. And as we've discussed, resolving other forms of redundancy improves maintainability *and* performance.
+压缩一张图片带来的效益更好。正如我们所讨论的，解决其他形式的冗余来改善可维护性和性能。
 
 ## 这是否违反了 DRY 原则？
 
-Attempting to reuse, for example `float: left`, is akin to trying to reuse variable names in different Javascript objects. It's simply not in violation of DRY.
+尝试复用，例如 `float: left`，类似于尝试在 JS 对象中复用变量名意义。 这根本就没有违反 DRY。
 
 ## 结语
 
-Striving for DRY leads to over-thought and over-engineered code. In doing so we make maintenance harder, not easier. Instead of obsessing over styles, we should focus on reusing tangible modules. Something we'll discuss in upcoming chapters.
+追求 DRY 导致过度思考和过度设计的代码。这样做，我们使维护更加困难，而不是更容易。 我们应该专注于重用有形的模块，而不是沉迷于样式。我们将在接下来的章节中讨论。
