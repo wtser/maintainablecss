@@ -3,22 +3,22 @@ layout: chapter
 title: 修饰器
 section: Core
 permalink: /chapters/modifiers/
-description: Use modifiers to change appearance based on slight differences.
+description: 根据细微的差别使用修饰词来改变外观
 ---
 
-Like state, modifiers also override styles. They are useful when modules (or components) have small and well understood differences.
+和状态一样，修饰器也会覆盖样式。当组件（模块）有小的不同的或容易理解的差异时，它们很有用。
 
-Take an e-commerce site whereby each category has a unique background image in the header. All headers have the same padding, and margin etc. The only difference is the background image.
+以电子商务网站为例，每个类别在标题中都有一个独特的背景图像。 所有的头部有一样的 padding， margin 等。 唯一不同是背景图片。
 
-The boys category would have a modifier as follows:
+男士分类下会有一个修饰器：
 
 	<div class="categoryHeader categoryHeader--boys">
 
-And similarly, the girls category would have a *girls* modifier:
+类似的，女士分类下会有一个*girls* 修饰器：
 
 	<div class="categoryHeader categoryHeader--girls">
 
-The CSS would be:
+CSS如下：
 
 	.categoryHeader {
 	  padding-top: 50px;
@@ -34,9 +34,9 @@ The CSS would be:
 	  background-image: url(/path/to/girls.jpg);
 	}
 
-Because the differences are small and well understood, this type of reuse is more maintainable.
+差异很小而且很容易理解，这类的复用是更容易维护的。
 
-We can use the same approach for buttons. Most sites have a primary and secondary button style. If all that changes is one or two styles we can have a modifier for primary and secondary buttons as follows:
+我们可以给按钮使用相同的方法。大多数的网站有个主要按钮和次要按钮的样式。如果所有这些改变只是一或两种样式，我们可以对主按钮和辅助按钮做一个修饰器：
 
 	.button {
 	  padding: 20px;
@@ -52,8 +52,8 @@ We can use the same approach for buttons. Most sites have a primary and secondar
 	  background-color: #eee;
 	}
 
-Again, this only works because the differences are well contained and well understood.
+同样的，这只在区别小并且容易理解的情况下好用。
 
 ## 结语
 
-Modifiers are a good way to reuse styles across a well understood element. But, the modifier itself should be a tweak. If it contains a lot of overrides, then modifiers are not the way to go. Instead use a [module](/chapters/modules/).
+对跨容易理解元素的样式复用，修饰器是一个好的方法。但是，修饰器本身应该被调整。如果它包含了太多覆盖，那么这不是它本来的用途。这时候你应该使用[模块](/chapters/modules/).
