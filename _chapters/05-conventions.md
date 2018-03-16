@@ -3,7 +3,7 @@ layout: chapter
 title: 约定
 section: Core
 permalink: /chapters/conventions/
-description: Learn the simple conventions that MaintainableCSS employs to write modules, components and state.
+description: MaintainableCSS 用于编写模块，组件和状态的简单约定
 ---
 
 *MaintainableCSS* 有如下约定：
