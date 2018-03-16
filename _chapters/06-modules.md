@@ -3,26 +3,26 @@ layout: chapter
 title: 模块
 section: Core
 permalink: /chapters/modules/
-description: Learn the differences between modules and components and how to identify them within a design. We'll also code up some example modules together.
+description: 学习模块和组件的区别，如何在设计者区分它们。一些模块代码例子。
 ---
 
 ## 什么是模块？
 
-A module is a distinct, independent unit, that can be combined with other modules to form a more complex structure.
+模块是一个不同的，独立的单元，能与其他模块结合形成更复杂的结构。
 
-In a living room, we can consider the TV, the sofa and the wall art modules. All coming together to create a useable room.
+在客厅，我们可以认为 电视机，沙发和壁画是模块。这些模块一起组成了一个有用的房价。
 
-If we take one of the units away, the others still work. We don't need the TV to be able to sit on the sofa etc.
+如果我们拿走其中一个单元，其他的依然可以工作。没有电视我们也可以坐在沙发上等等。
 
-In a website the header, registration form, shopping basket, article, product list, navigation and homepage promo can all be considered to be modules.
+一个网站的头部，注册表单，购物车，文章，产品列表，导航菜单等等都可以被认为是一个模块。
 
 ## 什么是组件？
 
-A module is made up of components. Without the components, the module is incomplete or broken.
+模块由组件组成。 没有组件，模块是不完整的或被破坏的。
 
-For example a sofa is made up of the frame, upholstery, legs, cushions and back pillows, all of which are required components to allow the sofa to function as designed.
+例如，沙发是由框架、装饰、腿、靠垫和靠枕组成的。所有的这一切让沙发能按照设计的功能运作。
 
-A logo *module* might consist of copy, an image and a link, each of which are components. Without the image the logo is broken, without the link the logo is incomplete.
+一个 logo 模块可以是由文字，图片和链接组成，每个部分都是组件。 没有图片那么logo 就是坏了，没有链接那么logo就是不完整的。
 
 ## 模块 vs 组件
 
@@ -34,23 +34,23 @@ Nobody understands your requirements as well as you do. Through experience you'l
 
 That's enough theory. Let's build three different modules together. In doing so, the hope is to cover most of the things we think about when writing CSS.
 
-## 1. 创建一个 basket 模块
+## 1. 创建一个 购物车 模块
 
-We'll simplify this basket for brevity. Each product within the basket will display the product's title with the ability to remove it from the basket.
+我们简化一下这个 购物车 ，购物车 中的每个产品都会显示标题并可以从中移除。
 
-The basket template might be:
+购物车模板：
 
 	<div class="basket">
-	  <h1 class="basket-title">Your basket</h1>
+	  <h1 class="basket-title">你的购物车</h1>
 	  <div class="basket-item">
-	      <h3 class="basket-productTitle">Product title</h3>
+	      <h3 class="basket-productTitle">产品名称</h3>
           <form>
-              <input type="submit" class="basket-removeButton" value="Remove">
+              <input type="submit" class="basket-removeButton" value="删除">
 	      </form>
 	  </div>
 	</div>
 
-And the CSS would be:
+CSS：
 
 	.basket {}
 	.basket-title {}
@@ -58,57 +58,57 @@ And the CSS would be:
 	.basket-productTitle {}
 	.basket-removeButton {}
 
-## 2. 创建一个 order summary 模块
+## 2. 创建一个 订单合计 模块
 
-Next, we will build an order summary module. This module is shown during checkout and bears some resemblance to the basket. For example, it has a title and it displays a list of products.
+接下来，我们会构建一个订单合计 模块。 此模块在结帐过程中显示，并与购物车有一些相似之处。 例如它有一个标题，它显示了一个产品列表。
 
-It does, however, have a different aesthetic and the products can no longer be removed i.e. no form and no remove button.
+当然，它有一个不同的界面，并且产品不能被删除。例如，没有表单和删除按钮了。
 
-The first thing to address is the temptation to reuse the basket template (and CSS). Even though there are similarities, this does not mean they are the same.
+首先要解决的是购物车模板（和 CSS） 复用的问题。尽管有点相似，但是不意味着他们是一样的。
 
-If we try to combine them we'll entangle two modules with display logic and CSS overrides. This entangling by definition is complex which in turn is hard to maintain and easily avoidable.
+如果我们尝试将它们结合起来，这两个模块的显示逻辑和CSS覆盖问题会搞在一起。这样会把问题搞复杂，更难于维护，难于避免。
 
-Instead, we should create a new module with the following template:
+反过来，我们应该创建一个新的模块，模板如下：
 
 	<div class="orderSummary">
-	  <h2 class="orderSummary-title">Order summary</h2>
+	  <h2 class="orderSummary-title">订单合计</h2>
 	  <div class="orderSummary-item">...</div>
 	  <div class="orderSummary-item">...</div>
 	</div>
 
-And the CSS would be:
+CSS：
 
 	.orderSummary {}
 	.orderSummary-title {}
 	.orderSummary-item {}
 
-As counterintuitive as this may seem, duplication is a better prospect. And, this is not really duplication. Duplication is copying the *same* thing. These two modules might look similar but they are not the same.
+尽管这看起来是违反直觉的，重复有一个更好的预期。 而且，这并不是真的重复。重复指的是复制 *相同* 的东西。这两个模块虽然看来相似其实不是。
 
-Keeping things separate, keeps things simple. Simple is the most important aspect of building reliable, scalable and maintainable software.
+保持分离，保持简单。简单是构建可靠、可伸缩和可维护的软件最重要的部分。
 
 ## 3. 创建一个按钮模块
 
-As our basket module only appears in the basket page, we didn't consider being able to reuse it elsewhere. Also, we didn't address the fact that the remove button is a component of the basket, making it harder to reuse across modules.
+由于我们的购物车模块只出现在购物车页面中，所以我们没有考虑在其他地方重用它。 另外，删除按钮其实是购物车的一个组成部分，这使得跨模块的重用变得更加困难。
 
-Buttons are an example of something that we want to reuse in lots of places, and potentially *within* different modules. (A button is not particularly useful on its own.)
+按钮是一个复用的好例子，在很多模块中 *潜在*。 (按钮对其本身而言并不是特别有用)
 
-One option would be to upgrade the button component into a module as follows:
+一种方式是将按钮组件升级为以下模块：
 
 	<input class="button" type="submit" value="{%raw%}{{text}}{%endraw%}">
 
-And the the CSS would be:
+CSS：
 
 	.button {}
 
-The problem is that buttons often have slightly different positioning, sizing and spacing depending on context. And of course there are media queries to consider.
+问题在于由于内容的不同，按钮的定位、大小和间距都有细微的差别。当然还有媒体查询需要考虑。
 
-For example, within one module a button might be floated to the right next to some text. In another it might be centered with some text beneath with some bottom margin.
+例如，某个模块中按钮可能需要右对齐。在另一个模块中可能需要居中。
 
-Ideally, we should iron out these inconsistencies in *design*, before they even make their way into code. But as this is not always possible and for the purposes of example, we'll assume we have to deal with these issues.
+理想情况下，我们应该在*设计*阶段消除这些不一致，而不是在代码阶段去调整。但由于这并不总是可行的，而且为了举例，我们假设我们必须处理这些问题。
 
-And so, because of these differences, it's tricky to abstract the common rules because we don't want to end up in override hell. Or worse that we're afraid to update the abstracted CSS rules.
+因此，由于这些差异，我们很难抽象出共同的规则，因为我们不想被样式覆盖折腾了。甚至糟糕到害怕更新样式规则。
 
-To avoid these problems, we can use a mixin or comma-delimit the common rules that aren't affected by their context. For example:
+为了避免这些问题，我们可以使用 mixin 或逗号分隔不影响其他内容的公共规则。例如：
 
 	.basket-removeButton,
 	.another-loginButton,
@@ -118,7 +118,7 @@ To avoid these problems, we can use a mixin or comma-delimit the common rules th
       color: #fff;
 	}
 
-Notice that in this example, we don't specify `float`, `margin` or `width` etc. Those styles are applied to the unique button:
+注意以上只是一个例子，我们不区分 `float`, `margin` 或者 `width` 等. 这些样式会被应用到独立的按钮上：
 
 	.basket-removeButton {
 	  float: right;
@@ -128,27 +128,27 @@ Notice that in this example, we don't specify `float`, `margin` or `width` etc. 
 	  margin-bottom: 10px;
 	}
 
-This seems sensible as it means we can opt in to these common styles. The opposite, of course being having to override. But there's another, third option.
+这似乎是明智的，因为这意味着我们可以选出这些共同的样式。 反过来，它容易被覆盖样式。但我们还有第三种选择。
 
-Imagine a checkout flow whereby each page has a continue button and a link to the previous step. We can reuse this by upgrading it into a module:
+想象一个结帐流程，每个页面都有一个继续按钮，并链接到前面的步骤。我们可以通过将其升级为模块来实现复用：
 
 	<div class="checkoutActions">
 	  <input class="checkoutActions-continue">
 	  <a class="checkoutActions-back"></a>
 	</div>
 
-And the CSS would be:
+CSS：
 
 	.checkoutActions-continue { }
 
 	.checkoutActions-back { }
 
-In doing this, we abstracted and applied the styles to a well understood `.checkoutActions` module. And we've done this without affecting similar, but not identical buttons.
+为了实现这个，我们抽象并应用了样式给 `.checkoutActions` 模块。 并且我们做到了实现的同时不影响类似的，但是不相同的按钮。
 
-We haven't discussed having more than one type of button (primary and secondary etc) yet. To do this we can use modifiers, which is addressed later.
+目前为止我们还未谈论按钮的多种类型的情况 (例如主要的 和 次要的 )。 我们可以使用修饰器来实现，这会在后面提到。
 
 ## 结语
 
-A module, by definition, is a reusable chunk of HTML and CSS. Before a group of elements can be upgraded into a module, we must first understand what it is and what its different use cases are.
+一个模块，从定义上来讲，是一个可复用的 由HTML 和 CSS组成的代码块。 在一群元素能成为模块之前，我们必须先理解他们是什么和他们在使用上的区别。
 
-Only then, can we design the right abstraction. And in doing so, we avoid complexity at the same time, which is the source of unmaintainable CSS.
+这样，我们才能设计出正确的抽象。在这样做的同时，我们避免了复杂性，复杂是不可维护 CSS 的根源。
