@@ -3,32 +3,32 @@ layout: chapter
 title: 问与答
 section: Extras
 permalink: /chapters/faqs/
-description: Your questions about MaintainableCSS are answered here.
+description: 关于 MaintainableCSS 的问题和答案
 ---
 
-If you can't find an answer, please [raise an issue on Github](https://github.com/adamsilver/maintainablecss.com/issues/new). Thanks!
+如果你无法找到答案，请[在 Github 上提交 issue](https://github.com/adamsilver/maintainablecss.com/issues/new)。谢谢！
 
-## Can I translate your book?
+## 我可以翻译你的书吗?
 
-Yes. To do this:
+是得，这样做：
 
-1. [Fork the repo](https://github.com/adamsilver/maintainablecss.com/).
-2. Point your (country code) domain to it.
-3. Cite the original and let me know :).
+1. [复刻这个仓库](https://github.com/adamsilver/maintainablecss.com/).
+2. 将你的域名指向它
+3. 引用来源并让我知道 :)
 
 <!-- ## When should I use this?
 
 If you like to keep things truly simple, use this approach. It works well if you're building long-lived, bespokely designed, responsive sites that scale and evolve over time. -->
 
-## What about inheritance for headings etc?
+## 关于标题等等元素的继承怎么做？
 
-Ideally our semantic HTML matches the integrity of the visual design. Meaning that we would hope that `h1`s are identical. In this case we can declare the following CSS:
+理想情况下，我们的语义HTML与视觉设计的完整性相匹配。这意味着我们希望 所有的 `h1`s 都是一样的。在这种情况下，我们可以声明以下 CSS:
 
 	h1 {
       /* etc */
 	}
 
-However, this is rarely the case, in commercial, large-scale websites. In this case we should encapsulate styles to the module in question:
+但是，在大型商业网站中，这种情况真的太少了。在这种情况下，我们应该将样式封装到模块中：
 
 	.module-heading {
 	  font-size: ...;
@@ -67,6 +67,6 @@ States and modifiers, similarly to media queries, should be located in close pro
 
 	.basket-heading--someModifier {}-->
 
-## Can't find an answer here?
+## 无法找到答案？
 
-Raise an issue on [Github](https://github.com/adamsilver/maintainablecss.com/issues/new) and I will get back to you as soon as I can. Thanks!
+在[Github](https://github.com/adamsilver/maintainablecss.com/issues/new)提交 issue，我会尽快回复你。谢谢！
