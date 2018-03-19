@@ -3,18 +3,17 @@ layout: chapter
 title: Javascript
 section: Extras
 permalink: /chapters/javascript/
-description: How to write maintainable CSS and maintainable Javascript at the same time.
+description: 如何在编写可维护 CSS 的同时编写可维护的 JS
 ---
 
-We may want to use Javascript to apply the same behaviour to multiple modules or components.
+我们可能希望使用 JS 在给多个模块或组件应用相同的行为。
 
-For example, we may use a `Collapser` constructor that toggles an element's visibility.
+例如，我们使用 `Collapser` 结构来切换元素的可见性。
 
-There are two approaches we can take, both of which complement the CSS approach we've discussed in previous chapters.
+有两张办法可以实现，在前面的章节中我们都已经提到过。
+## 1. 状态封装到模块中
 
-## 1. Encapsulating state to the module
-
-To do this, we would need to specify a module-specific state class to the constructor as follows:
+为此，我们需要为构造函数指定一个特定于模块的状态 class:
 
 	var module1Collapser = new Collapser(element1, {
 	  cssHideClass: 'moduleA-isHidden'
@@ -24,36 +23,36 @@ To do this, we would need to specify a module-specific state class to the constr
 	  cssHideClass: 'moduleB-isHidden'
 	});
 
-Then reuse the CSS styles as follows:
+复用的 CSS 样式如下：
 
 	.moduleA-isHidden,
 	.moduleB-isHidden {
       display: none;
 	}
 
-The trade-off is that this list could grow quickly (or use a mixin). And every time we add behavior, we need to update the CSS. A small change, but a change nonetheless. In this case we might consider a global state class.
+需要权衡的是这个列表会快速增长（可以使用 mixin）。并且每次我们添加行为，需要更新 CSS。一个小小的改变，也是一个改变。在这里例子里我们可以考虑添加一个全局的状态 class。
 
-## 2. Creating a global state class
+## 2. 创建一个全局状态 class
 
-If we find ourselves repeating the exact same set of styles for multiple modules, it might be better to use a global state class as follows:
+如果我们发现我们在重复一样的样式给多个模块，最好使用全局状态 class：
 
 	.globalState-isHidden {
       display: none;
 	}
 
-This approach does away with the long comma-delimited list. And we no longer need to specify the module class when instantiating. This is because the global class will be referenced from within.
+这个办法确实让我们远离了长长点的驼峰列表。并且我们也不再需要在实例化的时候区分模块的 class 。因为全局 class 将从内部引用。
 
 	var module1Collapser = new Collapser(element1);
 	var module2Collapser = new Collapser(element2);
 
-However, this approach doesn't always make sense. We may have two different modules that *behave* the same, but *look* different, which is something we've discussed in [State](/chapters/state/).
+然而，这个办法并不总是管用，我们可能有两个不同的模块，*行为*一样，但是*表现*不一样，就像我们在[状态](/chapters/state/)章节讨论过的那样。
 
-## 3. The best of both worlds
+## 3. 两者结合
 
-We could combine the two approaches by defaulting the class to the global state class. And then only when needed we can specify a class during instantiation as shown in the first example above.
+我们可以结合这两种方法，把默认的状态 class 放入全局状态 class中。在需要时，我们可以在实例化过程中指定一个类，如上面的第一个示例所示。
 
-## Final thought
+## 结语
 
-When we think about state, particularly with our Javascript hat on, we need to consider how this state affects behaviour as well as style. Different components may share the same behaviour, but they may look rather different. After careful consideration, we can choose the right solution to the problem.
+当我们思考状态，特别是和JS结合时，我们需要考虑这个状态如何影响行为和样式。不同的模块也许共享同样的行为，但看起来不同。 经过仔细考虑，我们可以选择正确的解决方案。
 
 <!-- display: flex vs display: block -->
